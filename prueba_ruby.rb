@@ -16268,10 +16268,16 @@ data = {
   }
 
 
-def buid_web_page (hash)
+def buid_web_page(hash)
     data_access = hash[:"photos"]
-    images = data_access.map {|x| x["img_src"]}
-    print images
+    images = data_access.map {|x| x[:"img_src"]}
+    list = ""
+    images.each do |img|
+      list += "\t<li><img src=#{img}></li>\n"
+    end
+    page = "<html>\n<head>\n</head>\n<body>\n<ul>\n" + list + "</ul>\n</body>\n</html>"
+    File.write('index.html',page)
 end
 
 buid_web_page(data)
+
