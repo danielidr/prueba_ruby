@@ -13,7 +13,7 @@ def request(address,key)
     return JSON.parse(response.read_body)
 end
 
-data = request("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=","eFjc1f8ZXr99SmWSQPkzyveyWWFpDDsPYx7WsmUt")
+data = request("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=0&api_key=","eFjc1f8ZXr99SmWSQPkzyveyWWFpDDsPYx7WsmUt")
 
 
 def buid_web_page(hash)
